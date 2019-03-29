@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title> Homebase App</title>
-		<script src="script.js" type= "text/javascript"></script>
-		<link rel= "stylesheet" href="style.css">
-	</head>
-	
-	<body>
-	</body>
+
+<head>
+	<title> Homebase App</title>
+	<script src="script.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="logindashboard">
+		<h1 id="title">Homebase</h1>
+		<img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Sunset_2007-1.jpg" id="img">
+
+		<form action="http://homebaseapp.com/api/login" method="POST" onsubmit="return false">
+			User Name <input id="username" name="username"> Password <input id="password" name="password">
+			<br>
+			<button onclick="handleSubmit()">Submit</button>
+		</form>
+	</div>
+</body>
+
 </html>
