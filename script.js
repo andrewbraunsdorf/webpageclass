@@ -9,22 +9,26 @@ function handleSubmit() {
 	// };
 	// var url = 'https://example.com/profile';
 	// var data = { username: 'andrew' };
-
+	const url = "https://cors-anywhere.herokuapp.com/http://careerdev-teaching-lujason2015.c9users.io/api";
 	const data = {
 		"username": document.getElementById("username").value,
 		"password": document.getElementById("password").value
+		
 	};
-	fetch("https://cors-anywhere.herokuapp.com/http://careerdev-teaching-lujason2015.c9users.io/api", {
-			method: 'POST',
-			body: JSON.stringify(data),
-			headers: {
-				'Content-Type': 'application/json'
-			}
+	fetch(url, {
+		method: 'POST',
+		body: JSON.stringify(data),
+		headers: {
+			'Content-Type': 'application/json'
+		}
 
-		})
-		.then(res => res.json())
-		.then(response => console.log('Success:', JSON.stringify(response)))
-		.catch(error => console.error('Error:', error));
+	}).then(async function(response) {
+		const res = await response;
+		console.log(res);
+	});
+	// .then(res => res.json())
+	// .then(response => console.log('Success:', JSON.stringify(response)))
+	// .catch(error => console.error('Error:', error));
 
 	// .then(function(response) {
 	// 	return response.json();
